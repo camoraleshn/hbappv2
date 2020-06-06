@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button defaultHref="/menu/tabs/tabs/servicios" slot="start">
+    </ion-back-button>
+    <ion-title>Servicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo">
+    <img src="assets/img/hbparreglado.PNG">
+  </div>
+  <ion-card mode="ios">
+    <ion-card-header>
+      <ion-card-title text-wrap>{{servicio?.Nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Recomendaciones: {{servicio?.Recomendaciones}} <br/> 
+      Contraindicaciones: {{servicio?.Contraindicaciones}} <br/> 
+      Advertencias: {{servicio?.Advertencias}} <br/>
+      <ion-button color="success" (click)="presentAlert()">Cotizar Precio</ion-button>
+      <ion-button color="success" (click)="add()">Añadir al Carrito</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

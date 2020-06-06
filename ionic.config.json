@@ -1,0 +1,13 @@
+{
+  "name": "test",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/desarrollospicyrocket/hospben/api",
+      "proxyUrl": "http://api.hospitalbendana.com"
+    }
+  ]
+}

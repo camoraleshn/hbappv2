@@ -1,0 +1,76 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-col class="ion-text-start">
+                <a href="home" class="ion-text-start btn-add">
+                    <ion-icon name="arrow-back-circle-outline"></ion-icon>
+                </a>
+            </ion-col>
+            <ion-col class="ion-text-end" style="padding-left: 20%;">
+                <img width="50%" src="assets/img/hbparreglado.PNG">
+            </ion-col>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list-header style="margin-left: 47%; font-size: 150%;">Directorio</ion-list-header>
+    
+    <ion-list>
+
+        <ion-item *ngFor="let medico of resultMedicos">
+            <ion-avatar slot="start">
+                <img src="assets/img/doctor01.jpg">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{medico.nombre}} {{medico.apellido}}</h2>
+                <h3>{{medico.Titulos}}</h3>
+            </ion-label>
+            <a href="v-vista-medico">
+                <ion-icon slot="end" name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+        </ion-item>
+
+        <!--<ion-item>
+            <ion-avatar slot="start">
+                <img src="assets/img/doctor02.png">
+            </ion-avatar>
+            <ion-label>
+                <h2>Claudia Floers</h2>
+                <h3>Cardiologo</h3>
+                <p></p>
+            </ion-label>
+            <a href="v-vista-medico">
+                <ion-icon slot="end" name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+        </ion-item>
+
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="assets/img/doctor03.png">
+            </ion-avatar>
+            <ion-label>
+                <h2>Gracie Marie Zacapa</h2>
+                <h3>Cardiologo</h3>
+                <p></p>
+            </ion-label>
+            <a href="v-vista-medico">
+                <ion-icon slot="end" name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+        </ion-item>
+
+        <ion-item>
+            <ion-avatar slot="start">
+                <img src="assets/img/doctor04.jpg">
+            </ion-avatar>
+            <ion-label>
+                <h2>Dennis Maldonado</h2>
+                <h3>Cardiologo</h3>
+                <p></p>
+            </ion-label>
+            <a href="v-vista-medico">
+                <ion-icon slot="end" name="chevron-forward-circle-outline"></ion-icon>
+            </a>
+        </ion-item>-->
+    </ion-list>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: right;">
+      <div class="logo">
+        <img width="50%" src="assets/img/hbparreglado.PNG">
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <br/>
+  <ion-label style="margin-left: 47%; font-size: 150%;">Iniciar Sesión</ion-label>
+  <form [formGroup]="loginForm" (ngSubmit)="autenticarUsuario()">
+      <ion-item>
+          <ion-label position="floating">
+              <ion-icon name="mail-outline"></ion-icon>
+              Correo
+          </ion-label>
+          <ion-input type="Email"
+                     formControlName="correo"
+                     class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && controls.correo.errors}"></ion-input>
+      </ion-item>
+      <div *ngIf="controls.correo.errors && submitted"
+           [@inOutAnimation]>
+          <small *ngIf="!controls.correo.errors.patternValidator">Ingrese una dirección de correo válida</small>
+      </div>
+      <p></p>
+      <ion-item>
+          <ion-label position="floating">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              Contraseña
+          </ion-label>
+          <ion-input type="Password"
+                     formControlName="password"
+                     class="form-control"
+                     [ngClass]="{ 'is-invalid': submitted && controls.password.errors}"></ion-input>
+      </ion-item><br /><br />
+      <div *ngIf="controls.password.errors && submitted"
+           [@inOutAnimation]>
+          <small *ngIf="controls.password.errors">Ingrese su contraseña</small>
+      </div>
+      <ion-button [disabled]="loading" shape="round" color="primary" expand="block" (click)="autenticarUsuario()" style="bottom: 45%; text-transform: capitalize;">Ingresar</ion-button>
+
+      <ion-button (click)="toRegister()" shape="round" color="success" expand="block" style="text-transform:capitalize;">
+          Regístrate
+      </ion-button>
+  </form>
+</ion-content>
+

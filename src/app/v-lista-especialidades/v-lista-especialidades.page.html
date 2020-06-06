@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-col class="ion-text-start">
+                <a href="home" class="ion-text-start btn-add">
+                    <ion-icon name="arrow-back-circle-outline"></ion-icon>
+                </a>
+            </ion-col>
+            <ion-col class="ion-text-end" style="padding-left: 20%;">
+                <img width="50%" src="assets/img/hbparreglado.PNG">
+            </ion-col>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+    
+
+<ion-content fullscreen>
+    <ion-list-header style="margin-left: 47%; font-size: 150%;">Especialidades</ion-list-header>
+    
+        <ion-list-header>
+            Elija la especialidad que necesita consultar
+        </ion-list-header>
+    <ion-list>
+
+        <ion-card color="success" *ngFor="let item of results">
+            <a href="v-lista-medicos">
+                <ion-item>
+                    <ion-icon name="heart-outline" slot="start"></ion-icon>
+                    <ion-label>
+                        <h2>{{item.Nombre}}</h2>
+                    </ion-label>
+                    <ion-chip slot="end" color="success">
+                        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                    </ion-chip>
+                </ion-item>
+            </a>
+        </ion-card>
+
+        <!--<ion-card>
+            <a href="v-lista-medicos">
+                <ion-item>
+                    <ion-icon name="eye-outline" slot="start"></ion-icon>
+                    <ion-label>
+                        <h2> Oftalmologia</h2>
+                    </ion-label>
+                    <ion-chip slot="end" color="success">
+                        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                    </ion-chip>
+                </ion-item>
+            </a>
+        </ion-card>
+
+        <ion-card>
+            <a href="v-lista-medicos">
+                <ion-item>
+                    <ion-icon name="female-outline" slot="start"></ion-icon>
+                    <ion-label>
+                        <h2>Ginecologia</h2>
+                    </ion-label>
+                    <ion-chip slot="end" color="success">
+                        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                    </ion-chip>
+                </ion-item>
+            </a>
+        </ion-card>
+
+        <ion-card>
+            <a href="v-lista-medicos">
+                <ion-item>
+                    <ion-icon name="restaurant-outline" slot="start"></ion-icon>
+                    <ion-label>
+                        <h2>Nutricion</h2>
+                    </ion-label>
+                    <ion-chip slot="end" color="success">
+                        <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+                    </ion-chip>
+                </ion-item>
+            </a>
+        </ion-card>-->
+    </ion-list>
+
+</ion-content>

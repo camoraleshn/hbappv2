@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button defaultHref="/menu/tabs/tabs/citas" slot="start">
+    </ion-back-button>
+    <ion-title>Médicos</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar animated (ionInput)="filter($event)" placeholder="Buscar"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="logo">
+    <img src="assets/img/hbparreglado.PNG">
+  </div>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content color="primary" pullingIcon="lines" refreshingSpinner="lines">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list mode="ios" inset="true" lines="full">
+    <ion-item button *ngFor="let medico of medicos" (click)="detail(medico.IDMedico)">
+      {{medico.Nombre}} {{medico.Apellido}}
+    </ion-item>
+  </ion-list>
+</ion-content>

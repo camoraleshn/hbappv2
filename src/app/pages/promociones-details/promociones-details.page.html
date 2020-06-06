@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-back-button defaultHref="/menu/tabs/tabs/promociones" slot="start">
+    </ion-back-button>
+    <ion-title>Promoción</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="logo">
+    <img src="assets/img/hbparreglado.PNG">
+  </div>
+  <!-- Promo -->
+  <ion-card mode="ios">
+    <ion-card-header>
+      <ion-card-title text-wrap>{{promocion?.Nombre}}</ion-card-title>
+      <ion-card-subtitle>{{promocion?.Detalle}}</ion-card-subtitle>
+      <ion-label>Vence el: {{promocion?.FechaExpiracion}}</ion-label>
+    </ion-card-header>
+    <!-- Servicios -->
+    <ion-card-content>
+      <ion-list mode="ios" inset="true" lines="full">
+        <ion-item *ngFor="let servicio of servicios">
+          <ion-label text-wrap>{{servicio?.Nombre}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-footer>
+      <ion-label text-wrap>Ahorro Total: {{Ahorro}}</ion-label>
+      <br/>
+      <ion-button color="success" (click)="presentAlert()">Cotizar Precio</ion-button>
+      <ion-button color="success" (click)="add()">Añadir al Carrito</ion-button>
+    </ion-footer>
+  </ion-card>
+
+</ion-content>
